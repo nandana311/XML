@@ -20,4 +20,20 @@ for employee in people:
 people[0].getElementsByTagName('firstname')[0].childNodes[0].nodeValue = "Hans"
 people[0].setAttribute("id","100")
 
+
+new_employee = domtree.createElement('employee')
+new_employee.setAttribute('id','be145')
+
+firstname = domtree.createElement('firstname')
+firstname.appendChild(domtree.createTextNode('Deva'))
+
+title = domtree.createElement('title')
+title.appendChild(domtree.createTextNode('Manager'))
+
+new_employee.appendChild(firstname)
+new_employee.appendChild(title)
+
+group.appendChild(new_employee)
+
 domtree.writexml(open('employee.xml','w'))
+
